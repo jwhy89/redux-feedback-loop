@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
-import ThankYou from '../ThankYou/ThankYou';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 
 class CommentsFour extends Component {
@@ -8,8 +9,11 @@ class CommentsFour extends Component {
         return (
             <Router>
                 <div className="App">
-                    CommentsFour
-                    <button><Link to="/thankyou">Thank You</Link></button>
+                    <Header />
+                    <label>Comments</label>
+                    <input type="text"></input>
+                    <button><Link to="/submit">Next</Link></button>
+                    <Footer />
                 </div>
             </Router>
         );
