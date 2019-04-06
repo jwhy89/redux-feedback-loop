@@ -22,8 +22,12 @@ class App extends Component {
       data: this.props.reduxState.submissionReducer,
     }).then((response) => {
       console.log(`in post `, response);
-      response.sendStatus(201);
+      // TO DO clear object in redux state
     })
+      .catch((error) => {
+        console.log(`Couldn't submit feedback`, this.props.reduxState.submissionReducer, error);
+        alert(`Sorry, couldn't submit your feedback. Try again later`);
+      })
   }
 
   render() {

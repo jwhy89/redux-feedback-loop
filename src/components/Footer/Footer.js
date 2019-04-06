@@ -16,7 +16,7 @@ class Footer extends Component {
                         <br />
                         <button disabled>Incomplete</button>
                         <br />
-                        <button><Link to="/thankyou">Submit</Link></button>
+                        <button onClick={this.props.submitAll}><Link to="/thankyou">Submit</Link></button>
                 </footer>
                 </Router>
             </div>
