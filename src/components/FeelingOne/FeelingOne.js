@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { HashRouter as Router, Link } from 'react-router-dom';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
@@ -43,16 +42,14 @@ class FeelingOne extends Component {
 
     render() {
         return (
-            <Router>
-                <div>
-                    <Header />
-                    <label>How are you feeling today?</label>
-                    <input onChange={this.handleChangeFor} 
-                        type="number" name="feeling" min="0" max="5"></input>
-                    <button onClick={this.handleClick}>Next</button>
-                    <Footer />
-                </div>
-            </Router>
+            <div>
+                <Header />
+                <label>How are you feeling today?</label>
+                <input onChange={this.handleChangeFor} 
+                    type="number" name="feeling" min="0" max="5"></input>
+                <button onClick={this.handleClick}>Next</button>
+                <Footer />
+            </div>
         );
     }
 }
