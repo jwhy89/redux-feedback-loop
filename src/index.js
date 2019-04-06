@@ -23,6 +23,11 @@ const submissionReducer = (state = {}, action) => {
             ...state,
             feeling: action.payload.support,
         };
+    } else if (action.type === "COMMENTS") {
+        return {
+            ...state,
+            feeling: action.payload.comments,
+        };
     }
     return state;
 }
