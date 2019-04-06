@@ -7,7 +7,14 @@ import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
 
-const submissionReducer = (state = {}, action) => {
+const defaultState = {
+    feeling: 0,
+    understanding: 0,
+    support: 0,
+    comments: '',
+}
+
+const submissionReducer = (state = defaultState, action) => {
     if (action.type === "FEELING") {
         return {
             ...state,
@@ -16,17 +23,17 @@ const submissionReducer = (state = {}, action) => {
     } else if (action.type === "UNDERSTANDING") {
         return {
             ...state,
-            feeling: action.payload.understanding,
+            understanding: action.payload.understanding,
         };
     } else if (action.type === "SUPPORT") {
         return {
             ...state,
-            feeling: action.payload.support,
+            support: action.payload.support,
         };
     } else if (action.type === "COMMENTS") {
         return {
             ...state,
-            feeling: action.payload.comments,
+            comments: action.payload.comments,
         };
     }
     return state;
