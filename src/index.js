@@ -35,6 +35,8 @@ const submissionReducer = (state = defaultState, action) => {
             ...state,
             comments: action.payload.comments,
         };
+    } else if (action.type === "RESET") {
+        return state = defaultState;
     }
     return state;
 }

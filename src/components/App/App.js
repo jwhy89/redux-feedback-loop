@@ -14,6 +14,13 @@ import ThankYou from '../ThankYou/ThankYou';
 
 class App extends Component {
 
+  resetRedux = () => {
+    console.log(`state on resetRedux `);
+    this.props.dispatch({
+      type: "RESET",
+    })
+  }
+
   submitAll = () => {
 
     axios({
@@ -23,6 +30,7 @@ class App extends Component {
     }).then((response) => {
       console.log(`in post `, response);
       // TO DO clear object in redux state
+      this.resetRedux();
     })
       .catch((error) => {
         console.log(`Couldn't submit feedback`, this.props.reduxState.submissionReducer, error);
