@@ -7,7 +7,7 @@ import './App.css';
 import Footer from '../Footer/Footer';
 import FeelingOne from '../FeelingOne/FeelingOne';
 import UnderstandingTwo from '../UnderstandingTwo/UnderstandingTwo';
-import SupportedThree from '../SupportedThree/SupportedThree';
+import SupportThree from '../SupportThree/SupportThree';
 import CommentsFour from '../CommentsFour/CommentsFour';
 import ThankYou from '../ThankYou/ThankYou';
 
@@ -18,7 +18,7 @@ class App extends Component {
         <div className="App">
           <Route exact path="/" component={FeelingOne} />
           <Route exact path="/2" component={UnderstandingTwo} />
-          <Route exact path="/3" component={SupportedThree} />
+          <Route exact path="/3" component={SupportThree} />
           <Route exact path="/4" component={CommentsFour} />
           <Route exact path="/submit" component={Footer} />
           <Route exact path="/thankyou" component={ThankYou} />

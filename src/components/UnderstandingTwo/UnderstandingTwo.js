@@ -31,10 +31,10 @@ class UnderstandingTwo extends Component {
     }
 
     handleClick = () => {
-        console.log(`Lets go to supported`);
+        console.log(`Lets go to support`);
         console.log('this.props', this.props);
 
-        // programmatically go to supported
+        // programmatically go to support
         this.props.history.push('/3');
         this.handleSubmit();
 
