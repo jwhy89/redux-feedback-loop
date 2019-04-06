@@ -5,15 +5,17 @@ import { HashRouter as Router, Route } from 'react-router-dom';
 
 import './App.css';
 // import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
+// import Footer from '../Footer/Footer';
 import FeelingOne from '../FeelingOne/FeelingOne';
 import UnderstandingTwo from '../UnderstandingTwo/UnderstandingTwo';
 import SupportThree from '../SupportThree/SupportThree';
 import CommentsFour from '../CommentsFour/CommentsFour';
+import ReviewFeedback from '../ReviewFeedback/ReviewFeedback';
 import ThankYou from '../ThankYou/ThankYou';
 
 class App extends Component {
 
+  // function to reset redux state
   resetRedux = () => {
     console.log(`state on resetRedux `);
     this.props.dispatch({
@@ -21,6 +23,7 @@ class App extends Component {
     })
   }
 
+  // axios POST request to submit feedback to database
   submitAll = () => {
 
     axios({
@@ -47,7 +50,7 @@ class App extends Component {
           <Route exact path="/3" component={SupportThree} />
           <Route exact path="/4" component={CommentsFour} />
           <Route exact path="/submit" render={(routeProps) =>
-            <Footer {...routeProps} submitAll={this.submitAll} />} />
+            <ReviewFeedback {...routeProps} submitAll={this.submitAll} />} />
           <Route exact path="/thankyou" component={ThankYou} />
         </div>
       </Router>
