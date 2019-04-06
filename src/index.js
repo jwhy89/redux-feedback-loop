@@ -13,6 +13,11 @@ const submissionReducer = (state = {}, action) => {
             ...state,
             feeling: action.payload.feeling,
         };
+    } else if (action.type === "UNDERSTANDING") {
+        return {
+            ...state,
+            feeling: action.payload.understanding,
+        };
     }
     return state;
 }

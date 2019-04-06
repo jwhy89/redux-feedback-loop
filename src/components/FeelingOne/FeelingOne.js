@@ -47,7 +47,8 @@ class FeelingOne extends Component {
                 <div>
                     <Header />
                     <label>How are you feeling today?</label>
-                    <input onChange={this.handleChangeFor} type="number" name="feeling"></input>
+                    <input onChange={this.handleChangeFor} 
+                        type="number" name="feeling" min="0" max="5"></input>
                     <button onClick={this.handleClick}>Next</button>
                     <Footer />
                 </div>
