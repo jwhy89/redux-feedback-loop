@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { HashRouter as Router, Route, Link, Redirect, Switch} from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 
 import './App.css';
 // import Header from '../Header/Header';
@@ -15,7 +15,6 @@ class App extends Component {
   render() {
     return (
       <Router>
-      {/* <Switch> */}
         <div className="App">
           <Route exact path="/" component={FeelingOne} />
           <Route exact path="/2" component={UnderstandingTwo} />
@@ -24,7 +23,6 @@ class App extends Component {
           <Route exact path="/submit" component={Footer} />
           <Route exact path="/thankyou" component={ThankYou} />
         </div>
-      {/* </Switch> */}
       </Router>
     );
   }

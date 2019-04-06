@@ -1,17 +1,54 @@
 import React, { Component } from 'react';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { HashRouter as Router, Link } from 'react-router-dom';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
 class FeelingOne extends Component {
+
+    state = {
+        submission: {
+            feeling: 0,
+        }
+
+    }
+
+    handleChangeFor = (event) => {
+        this.setState({
+            submission: {
+                ...this.state.submission,
+                [event.target.name]: event.target.value,
+            }
+        })
+    }
+
+    handleSubmit = () => {
+        console.log(`state on submit `, this.state.submission);
+        this.props.dispatch({
+            type: "FEELING",
+            payload: this.state.submission,
+        })
+
+    }
+
+    handleClick = () => {
+        console.log(`Lets go to understanding`);
+        console.log('this.props', this.props);
+
+        // programmatically go to understanding
+        this.props.history.push('/2');
+        this.handleSubmit();
+
+    }
+
     render() {
         return (
             <Router>
                 <div>
                     <Header />
                     <label>How are you feeling today?</label>
-                    <input type="number"></input>
-                    <button><Link to="/2">Next</Link></button>
+                    <input onChange={this.handleChangeFor} type="number" name="feeling"></input>
+                    <button onClick={this.handleClick}>Next</button>
                     <Footer />
                 </div>
             </Router>
@@ -19,4 +56,8 @@ class FeelingOne extends Component {
     }
 }
 
-export default FeelingOne;
+const mapReduxStateToProps = (reduxState) => ({
+    reduxState
+})
+
+export default connect(mapReduxStateToProps)(FeelingOne);
