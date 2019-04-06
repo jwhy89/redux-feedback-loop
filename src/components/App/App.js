@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import axios from 'axios';
 import { HashRouter as Router, Route } from 'react-router-dom';
 
@@ -12,6 +13,19 @@ import CommentsFour from '../CommentsFour/CommentsFour';
 import ThankYou from '../ThankYou/ThankYou';
 
 class App extends Component {
+
+  submitAll = () => {
+
+    axios({
+      method: 'POST',
+      url: '/submission',
+      data: this.props.reduxState.submissionReducer,
+    }).then((response) => {
+      console.log(`in post `, response);
+      response.sendStatus(201);
+    })
+  }
+
   render() {
     return (
       <Router>
@@ -20,7 +34,8 @@ class App extends Component {
           <Route exact path="/2" component={UnderstandingTwo} />
           <Route exact path="/3" component={SupportThree} />
           <Route exact path="/4" component={CommentsFour} />
-          <Route exact path="/submit" component={Footer} />
+          <Route exact path="/submit" render={(routeProps) =>
+            <Footer {...routeProps} submitAll={this.submitAll} />} />
           <Route exact path="/thankyou" component={ThankYou} />
         </div>
       </Router>
@@ -28,4 +43,8 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapReduxStateToProps = (reduxState) => ({
+  reduxState
+})
+
+export default connect(mapReduxStateToProps)(App);
