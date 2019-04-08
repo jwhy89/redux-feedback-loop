@@ -30,6 +30,12 @@ class SupportThree extends Component {
 
     }
 
+    submitButtonCounter = () => {
+        // dispatch an action which tells redux to do something
+        const action = { type: 'COUNTER' };
+        this.props.dispatch(action);
+    }
+
     handleClick = () => {
         console.log(`Lets go to comments`);
         console.log('this.props', this.props);
@@ -37,7 +43,7 @@ class SupportThree extends Component {
         // programmatically go to comments
         this.props.history.push('/4');
         this.handleSubmit();
-
+        this.submitButtonCounter();
     }
 
     render() {

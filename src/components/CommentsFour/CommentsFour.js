@@ -30,6 +30,12 @@ class CommentsFour extends Component {
 
     }
 
+    submitButtonCounter = () => {
+        // dispatch an action which tells redux to do something
+        const action = { type: 'COUNTER' };
+        this.props.dispatch(action);
+    }
+
     handleClick = () => {
         console.log(`Lets go to footer`);
         console.log('this.props', this.props);
@@ -37,7 +43,7 @@ class CommentsFour extends Component {
         // programmatically go to comments
         this.props.history.push('/submit');
         this.handleSubmit();
-
+        this.submitButtonCounter();
     }
 
     render() {
