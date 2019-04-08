@@ -44,7 +44,7 @@ const submissionReducer = (state = defaultState, action) => {
     return state;
 }
 
-// reducer function to manage submit ready button state
+// reducer function to manage submit ready button disabled or not state
 const counterReducer = (state = counter, action) => {
     console.log('in counterReducer reducer', state);
     if (action.type === "COUNTER") {

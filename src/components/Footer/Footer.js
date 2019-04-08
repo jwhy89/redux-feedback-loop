@@ -3,25 +3,6 @@ import { connect } from 'react-redux';
 import { HashRouter as Router, Link } from 'react-router-dom';
 
 class Footer extends Component {
-
-    submitButtonCounter = () => {
-        // dispatch an action which tells redux to do something
-        const action = { type: 'COUNTER' };
-        this.props.dispatch(action);
-    }
-
-    resetButtonCounter = () => {
-        // dispatch an action which tells redux to do something
-        const action = { type: 'RESET_COUNTER' };
-        this.props.dispatch(action);
-    }
-
-    buttonStatus = () => {
-        if (this.props.reduxState.counterReducer < 4 ) {
-            return false;
-        }
-    }
-
     render() {
         if (this.props.reduxState.counterReducer < 4 ) {
             return (
@@ -49,7 +30,7 @@ class Footer extends Component {
                             <p>Support: {this.props.reduxState.submissionReducer.support}</p>
                             <p>Comments: {this.props.reduxState.submissionReducer.comments}</p>
                             <br />
-                            <button onClick={this.resetButtonCounter}><Link to="/thankyou">Submit</Link></button>
+                            <button onClick={this.props.submitAll}><Link to="/thankyou">Submit</Link></button>
                         </footer>
                     </Router>
                 </div>
