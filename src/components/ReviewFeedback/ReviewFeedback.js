@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { HashRouter as Router, Link } from 'react-router-dom';
 
 // couldn't figure conditional for button so created a copy of footer
-class Footer extends Component {
+class ReviewFeedback extends Component {
     render() {
         return (
             <div>
@@ -27,4 +27,4 @@ const mapReduxStateToProps = (reduxState) => ({
     reduxState
 })
 
-export default connect(mapReduxStateToProps)(Footer);
+export default connect(mapReduxStateToProps)(ReviewFeedback);

@@ -30,6 +30,12 @@ class FeelingOne extends Component {
 
     }
 
+    submitButtonCounter = () => {
+        // dispatch an action which tells redux to do something
+        const action = { type: 'COUNTER' };
+        this.props.dispatch(action);
+    }
+
     handleClick = () => {
         console.log(`Lets go to understanding`);
         console.log('this.props', this.props);
@@ -37,7 +43,7 @@ class FeelingOne extends Component {
         // programmatically go to understanding
         this.props.history.push('/2');
         this.handleSubmit();
-
+        this.submitButtonCounter();
     }
 
     render() {

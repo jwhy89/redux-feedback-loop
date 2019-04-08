@@ -14,6 +14,9 @@ const defaultState = {
     comments: '',
 }
 
+const counter = 0;
+
+// reducer function to manage global feedback object
 const submissionReducer = (state = defaultState, action) => {
     if (action.type === "FEELING") {
         return {
@@ -41,9 +44,21 @@ const submissionReducer = (state = defaultState, action) => {
     return state;
 }
 
+// reducer function to manage submit ready button state
+const counterReducer = (state = counter, action) => {
+    console.log('in counterReducer reducer', state);
+    if (action.type === "COUNTER") {
+        return state + 1;
+    } else if (action.type === "RESET_COUNTER") {
+        return state = counter;
+    }
+    return state;
+}
+
 let storeInstance = createStore(
     combineReducers({
         submissionReducer,
+        counterReducer,
     }),
     applyMiddleware(logger)
 )
