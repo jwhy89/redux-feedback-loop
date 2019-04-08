@@ -24,12 +24,12 @@ submissionRouter.post('/', (req, res) => {
 })
 
 // GET all submitted feedback that have been placed
-router.get('/admin', (req, res) => {
+submissionRouter.get('/admin', (req, res) => {
     // Find all feedback and return them
     pool.query('SELECT * FROM "feedback";').then((result) => {
         res.send(result.rows);
     }).catch((error) => {
-        console.log('Error GET /', error);
+        console.log('Error GET /admin', error);
         res.sendStatus(500);
     });
 })

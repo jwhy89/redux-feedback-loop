@@ -15,7 +15,7 @@ class Admin extends Component {
     getFeedback = () => {
         axios({
             method: 'GET',
-            url: '/admin',
+            url: '/submission/admin',
         })
             .then((response) => {
                 console.log('Just the feedback data', response.data);
@@ -56,8 +56,8 @@ class Admin extends Component {
                         </th>
                     </tr>
                 </thead>
-                <tbody>
-                    {this.feedbackList.map(feedback =>
+                {/* <tbody>
+                    {this.props.feedbackList.map(feedback =>
 
                         <tr key={feedback.id}>
                             <td>
@@ -78,7 +78,7 @@ class Admin extends Component {
                         </tr>
 
                     )}
-                </tbody>
+                </tbody> */}
             </table>
         )
     }
