@@ -29,7 +29,7 @@ class Admin extends Component {
             })
     }
 
-    deleteTask = () => {
+    deleteTask = (event) => {
     // let $deleteButton = $(this);
     // let $tr = $deleteButton.closest('tr');
     // // let $tr = $deleteButton.parent().parent();
@@ -40,7 +40,7 @@ class Admin extends Component {
 
         axios({
             method: 'DELETE',
-            url: `/submission/${this.feedback.id}`
+            url: `/submission/${event.target.name}`
         })
         .then((response) => {
             this.getFeedback();
@@ -101,7 +101,7 @@ class Admin extends Component {
                                 {moment(feedback.date).format('YYYY-MM-DD')}
                             </td>
                             <td>
-                                <button onClick={this.deleteTask}>Remove</button>
+                                <button onClick={this.deleteTask} name={feedback.id}>Remove</button>
                             </td>
                         </tr>
 
