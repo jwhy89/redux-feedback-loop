@@ -29,15 +29,8 @@ class Admin extends Component {
             })
     }
 
+    // function to feedback from database
     deleteTask = (event) => {
-    // let $deleteButton = $(this);
-    // let $tr = $deleteButton.closest('tr');
-    // // let $tr = $deleteButton.parent().parent();
-    // console.log('Did I get a tr???', $tr);
-
-    // let feedbackId = $tr.data('id');
-    // console.log('Feedback id is ', feedbackId);
-
         axios({
             method: 'DELETE',
             url: `/submission/${event.target.name}`
