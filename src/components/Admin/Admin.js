@@ -29,6 +29,28 @@ class Admin extends Component {
             })
     }
 
+    deleteTask = () => {
+    // let $deleteButton = $(this);
+    // let $tr = $deleteButton.closest('tr');
+    // // let $tr = $deleteButton.parent().parent();
+    // console.log('Did I get a tr???', $tr);
+
+    // let feedbackId = $tr.data('id');
+    // console.log('Feedback id is ', feedbackId);
+
+        axios({
+            method: 'DELETE',
+            url: `/submission/${this.feedback.id}`
+        })
+        .then((response) => {
+            this.getFeedback();
+        })
+        .catch((error) => {
+            console.log(`Something bad happened deleting feedback ${error}`);
+            alert('Couldn\'t delete the feedback, try again later');
+        })
+    }
+
     componentDidMount() {
         console.log('in componentDidMount...')
         this.getFeedback();
@@ -79,7 +101,7 @@ class Admin extends Component {
                                 {moment(feedback.date).format('YYYY-MM-DD')}
                             </td>
                             <td>
-                                <button className="btn-del-song">Remove</button>
+                                <button onClick={this.deleteTask}>Remove</button>
                             </td>
                         </tr>
 
