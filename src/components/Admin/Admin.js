@@ -54,10 +54,13 @@ class Admin extends Component {
                         <th>
                             Date
                         </th>
+                        <th>
+                            &nbsp;
+                        </th>
                     </tr>
                 </thead>
-                {/* <tbody>
-                    {this.props.feedbackList.map(feedback =>
+                <tbody>
+                    {this.state.feedbackList.map(feedback =>
 
                         <tr key={feedback.id}>
                             <td>
@@ -75,10 +78,13 @@ class Admin extends Component {
                             <td>
                                 {moment(feedback.date).format('YYYY-MM-DD')}
                             </td>
+                            <td>
+                                <button className="btn-del-song">Remove</button>
+                            </td>
                         </tr>
 
                     )}
-                </tbody> */}
+                </tbody>
             </table>
         )
     }
