@@ -12,6 +12,7 @@ class SupportThree extends Component {
 
     }
 
+    // function to store input to current component state
     handleChangeFor = (event) => {
         this.setState({
             submission: {
@@ -21,6 +22,7 @@ class SupportThree extends Component {
         })
     }
 
+    // function to send object prop to redux state
     handleSubmit = () => {
         console.log(`state on submit `, this.state.submission);
         this.props.dispatch({
@@ -30,12 +32,8 @@ class SupportThree extends Component {
 
     }
 
-    submitButtonCounter = () => {
-        // dispatch an action which tells redux to do something
-        const action = { type: 'COUNTER' };
-        this.props.dispatch(action);
-    }
-
+    // function to consolidate the handleSubmit and submitButtonCounter function
+    // also need to direct to next page
     handleClick = () => {
         console.log(`Lets go to comments`);
         console.log('this.props', this.props);
@@ -43,7 +41,7 @@ class SupportThree extends Component {
         // programmatically go to comments
         this.props.history.push('/4');
         this.handleSubmit();
-        this.submitButtonCounter();
+        this.props.submitButtonCounter();
     }
 
     render() {

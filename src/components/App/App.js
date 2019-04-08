@@ -15,7 +15,23 @@ import ThankYou from '../ThankYou/ThankYou';
 
 class App extends Component {
 
-  // function to reset redux state
+  // function for submit button counter
+  // will need to prop into components
+  submitButtonCounter = () => {
+    // dispatch an action which tells redux to do something
+    const action = { type: 'COUNTER' };
+    this.props.dispatch(action);
+  }
+
+  // function for reset button counter
+  // will need to prop into footer
+  resetButtonCounter = () => {
+    // dispatch an action which tells redux to do something
+    const action = { type: 'RESET_COUNTER' };
+    this.props.dispatch(action);
+  }
+
+  // function to reset redux state for submission object
   resetRedux = () => {
     console.log(`state on resetRedux `);
     this.props.dispatch({
@@ -32,8 +48,9 @@ class App extends Component {
       data: this.props.reduxState.submissionReducer,
     }).then((response) => {
       console.log(`in post `, response);
-      // TO DO clear object in redux state
+      // will call functions to reset redux states
       this.resetRedux();
+      this.resetButtonCounter();
     })
       .catch((error) => {
         console.log(`Couldn't submit feedback`, this.props.reduxState.submissionReducer, error);
@@ -45,12 +62,21 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Route exact path="/" component={FeelingOne} />
-          <Route exact path="/2" component={UnderstandingTwo} />
-          <Route exact path="/3" component={SupportThree} />
-          <Route exact path="/4" component={CommentsFour} />
+          <Route exact path="/" render={(routeProps) =>
+            <FeelingOne {...routeProps} 
+            submitButtonCounter={this.submitButtonCounter} />} />
+          <Route exact path="/2" render={(routeProps) =>
+            <UnderstandingTwo {...routeProps} 
+            submitButtonCounter={this.submitButtonCounter} />} />
+          <Route exact path="/3" render={(routeProps) =>
+            <SupportThree {...routeProps} 
+            submitButtonCounter={this.submitButtonCounter} />} />
+          <Route exact path="/4" render={(routeProps) =>
+            <CommentsFour {...routeProps} 
+            submitButtonCounter={this.submitButtonCounter} />} />
           <Route exact path="/submit" render={(routeProps) =>
-            <Footer {...routeProps} submitAll={this.submitAll} />} />
+            <Footer {...routeProps} 
+            submitAll={this.submitAll} />} />
           <Route exact path="/thankyou" component={ThankYou} />
         </div>
       </Router>
