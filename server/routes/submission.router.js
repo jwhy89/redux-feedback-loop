@@ -34,4 +34,19 @@ submissionRouter.get('/admin', (req, res) => {
     });
 })
 
+// DELETE
+submissionRouter.delete('/:id', (req, res) => {
+    let id = req.params.id;
+    console.log(`Deleting feedback with id=${id}`);
+    let sqlText = `DELETE FROM "feedback" WHERE "id"=$1`;
+    pool.query(sqlText, [id])
+        .then((result) => {
+            res.sendStatus(200);
+        })
+        .catch((error) => {
+            console.log(`Failed to delete feedback with id=${id}`, error);
+            res.sendStatus(500);
+        })
+})
+
 module.exports = submissionRouter;
