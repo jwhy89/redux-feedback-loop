@@ -10,8 +10,8 @@ import FeelingOne from '../FeelingOne/FeelingOne';
 import UnderstandingTwo from '../UnderstandingTwo/UnderstandingTwo';
 import SupportThree from '../SupportThree/SupportThree';
 import CommentsFour from '../CommentsFour/CommentsFour';
-// import ReviewFeedback from '../ReviewFeedback/ReviewFeedback';
 import ThankYou from '../ThankYou/ThankYou';
+import Admin from '../Admin/Admin';
 
 class App extends Component {
 
@@ -78,6 +78,7 @@ class App extends Component {
             <Footer {...routeProps} 
             submitAll={this.submitAll} />} />
           <Route exact path="/thankyou" component={ThankYou} />
+          <Route exact path="/admin" component={Admin} />
         </div>
       </Router>
     );
