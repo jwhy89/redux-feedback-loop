@@ -1,6 +1,6 @@
-# Redux Feedback Loop
+# Jay's Redux Feedback Loop
 
-The Redux Feedback Loop web application allows users to submit feedback through a multi-part form. After the user has navigated through the form and submitted their feedback, they are routed to a `Thank You Page` and are able to restart the feedback loop by clicking the `Leave New Feedback` button. There is also an admin page that can be viewed by navigating to `localhost:3000/#/admin`. The user is able to view a table of the feedback submitted and delete feedback submissions.
+Jay's Redux Feedback Loop web application allows users to submit feedback through a multi-part form. After the user has navigated through the form and submitted their feedback, they are routed to a `Thank You Page` and are able to restart the feedback loop by clicking the `Leave New Feedback` button. There is also an admin page that can be viewed by navigating to `localhost:3000/#/admin`. The user is able to view a table of the feedback submitted and delete feedback submissions.
 
 ## Built With
 
@@ -52,6 +52,14 @@ Steps to get the development environment running.
 4. Run `npm server`
 5. `cmd + t` to open a new terminal window and Run `npm run client`
 6. Navigate to `localhost:3000`
+
+### Deployment
+
+1. Create a new Heroku project
+1. Link the Heroku project to the project GitHub Repo
+1. Create an Heroku Postgres database
+1. Connect to the Heroku Postgres database from Postico
+1. Create the necessary tables
 
 ### Author
 
