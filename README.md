@@ -57,7 +57,7 @@ Steps to get the development environment running.
 
 1. Create a new Heroku project
 1. Link the Heroku project to the project GitHub Repo
-1. Create an Heroku Postgres database
+1. Create a Heroku Postgres database
 1. Connect to the Heroku Postgres database from Postico
 1. Create the necessary tables
 
