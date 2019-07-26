@@ -61,10 +61,16 @@ Steps to get the development environment running.
 1. Connect to the Heroku Postgres database from Postico
 1. Create the necessary tables
 
-### Author
+## These are features I did not get to and would like to implement in the future.
+There were many features that I did not get to. I would like to add the following features:
+
+1. Add additional styling: either CSS or Material UI.
+1. Making the application more mobile friendly.
+
+## Author
 
 Jarvis Yang
 
-### Acknowledgements
+## Acknowledgements
 
 Prime Digital Academy
